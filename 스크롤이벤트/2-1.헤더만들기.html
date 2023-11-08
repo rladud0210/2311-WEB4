@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 5000px;
+        }
+        header {
+            height: 100px;
+            background-color: pink;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            transition: 0.5s;
+        }
+        
+        header.hide {
+            transform: translateY(-100%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <script>
+       const header = document.querySelector('header');
+       
+       let posY = 0;
+        
+        window.addEventListener('scroll',(e)=>{
+            if(posY < window.scrollY){ 
+                헤더숨기기()
+            }else{
+                헤더보이기()
+            }
+            posY = window.scrollY;
+        })
+
+        function 헤더숨기기(){
+            header.classList.add('hide');
+        }
+
+        function 헤더보이기(){
+            header.classList.remove('hide');
+        }
+    </script>
+</body>
+</html>
