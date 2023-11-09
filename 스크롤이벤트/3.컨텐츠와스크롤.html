@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            padding: 0 32px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contents {
+            width: 400px;
+            height: 200px;
+            background-color: pink;
+            margin-bottom: 100px;
+        }
+
+        .scroll-inter {
+            opacity: 0;
+            transition: 1s;
+            transform: translateX(-50px);
+        }
+        
+        .scroll-inter.active {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="section-container">
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+
+            <span class="scroll-inter" id="test">테스트영역</span>
+
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+        </div>
+    </section>
+        
+    <script>
+        const test = document.getElementById('test');
+
+        // test의 위치를 파악할 수 있게 해주는 도구
+        console.log(
+            test.getBoundingClientRect() // = 다양한 좌표값들을 반환해준다.
+        )
+        // top, botton, width, height 등 다양한 프로퍼티가 들어있다.
+        // 위치는 브라우저 내부 화면이 기준
+
+        // 스크롤 할 때마다 test의 위치 정보를 콘솔에 출력하게
+
+       
+        window.addEventListener('scroll',()=>{
+            if(test.getBoundingClientRect().top - window.innerHeight < 0){ 
+                test.classList.add('active');
+            }else{
+                test.classList.remove('active');
+            }
+        })
+    </script>
+</body>
+</html>

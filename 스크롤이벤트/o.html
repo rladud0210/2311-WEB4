@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            padding: 0 32px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contents {
+            width: 400px;
+            height: 200px;
+            background-color: pink;
+            margin-bottom: 100px;
+        }
+
+        .scroll-inter {
+            opacity: 0;
+            transition: 1s;
+            transform: translateX(-50px);
+        }
+        
+        .scroll-inter.active {
+            opacity: 1;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="section-container">
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+            <div class="contents scroll-inter"></div>
+        </div>
+    </section>
+        
+    <script>
+        const contents = document.getElementsByClassName('contents');
+        
+        console.log(
+            contents.getBoundingClientRect() // = 다양한 좌표값들을 반환해준다.
+        )
+
+        // let 윈도우 = window.innerHeight;
+        
+        // window.addEventListener('scroll',()=>{
+        //     for(let i = contents.getBoundingClientRect().top - window.innerHeight ; i > 0 ; i ++) {
+        //         contents.classList.add('active');
+        //     }
+
+        // })
+        
+    </script>
+</body>
+</html>
