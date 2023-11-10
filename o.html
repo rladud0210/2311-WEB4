@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        @font-face {
+            font-family: 'IAMAPLAYER';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/IAMAPLAYER.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        a {
+            color: #222;
+            text-decoration: none;
+        }
+
+        body {
+            height: 10000px;
+            background-image: linear-gradient(#333, #AAA);
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            padding: 0 32px;
+            box-sizing: border-box;
+            height: 64px;
+            transition: 1s;
+            overflow: hidden;
+
+        }
+
+        header:hover {
+            height: 200px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* height: 100%; */
+        }
+
+        h1 {
+            font-family: 'IAMAPLAYER';
+            font-size: 28px;
+            border-top: 3px solid #222;
+            border-bottom: 3px solid #222;
+        }
+
+        .header-list-container {
+            display: flex;
+            /* position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%); */
+
+        }
+
+        .header-list-container>li {
+            position: relative;
+        }
+
+        .header-list-container>li>a {
+            display: block;
+            padding: 24px 48px;
+            font-weight: bold;
+        }
+
+        .inner-list-container {
+            left: 48px;
+            position: absolute;
+            /* display: none; */
+            height: 0;
+            overflow: hidden;
+            transition: 1s;
+            opacity: 0;
+
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        header:hover .inner-list-container {
+            /* display: block; */
+            height: auto;
+            opacity: 1;
+
+        }
+
+        .icon-container {
+            display: flex;
+            gap: 16px;
+        }
+
+        .hamberger-menu {
+            display: none;
+        }
+
+        #intro {
+            height: 100vh;
+            background-color: wheat;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .intro-title-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        #intro h2 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        #intro p {
+            font-size: 24px;
+        }
+
+
+        #innostage {
+            padding: 120px 0;
+            background-color: pink;
+        }
+
+        .section-container {
+            margin: 0 auto;
+            width: 1240px;
+        }
+
+        .section-header-wrapper {
+            margin-bottom: 48px;
+        }
+
+        .section-header-wrapper>h2 {
+            font-weight: bold;
+            font-size: 20px;
+            color: #222;
+            margin-bottom: 16px;
+        }
+
+        .section-header-wrapper>h2::after {
+            display: inline-block;
+            content: '';
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            background-color: green;
+            margin-left: 4px;
+        }
+
+        .section-header-wrapper>p {
+            color: #555;
+        }
+
+        .innostage-list {
+            /* width: 1240px; */
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .innostage-list-contents {
+            border-radius: 24px;
+            width: calc((100% - (40px * 2)) / 3);
+            height: 380px;
+            background-color: #AAA;
+            border: 1px solid #222;
+            padding: 32px;
+
+            box-sizing: border-box;
+        }
+
+        .innostage-list-contents>h3 {
+            margin-bottom: 16px;
+            font-size: 32px;
+            font-weight: 700;
+            color: #222;
+            background-color: pink;
+        }
+
+        .innostage-list-contents>p {
+            color: #444;
+            margin-bottom: 28px;
+        }
+
+        .innostage-list-contents>a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .innostage-list-contents>a::after {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            border: 1px solid white;
+            transform: translateX(-25%) rotate(45deg);
+            border-left: none;
+            border-bottom: none;
+
+        }
+
+        #performance {
+            background-color: #01B18B;
+            color: white;
+            padding: 100px 0;
+        }
+
+        #performance>.section-container {
+            display: flex;
+        }
+
+        #performance .section-header-wrapper {
+            width: 50%;
+        }
+
+        #performance .section-header-wrapper>h2 {
+            color: white;
+        }
+
+        #performance .section-header-wrapper>h2::after {
+            background-color: #EEE;
+        }
+
+        #performance .section-header-wrapper>p {
+            color: rgba(255, 255, 255, .8);
+        }
+
+        #performance .counter-list-container {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: space-between; */
+            /* row-gap: 24px; */
+            /* column-gap: 24px; */
+            gap: 24px;
+        }
+
+        .counter-container {
+            width: calc((100% - 24px) / 2);
+            border-top: 1px solid #ddd;
+            padding: 32px 0;
+        }
+
+        .counter-heading-wrapper {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 32px;
+        }
+
+        .temp-img {
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, .8);
+        }
+
+        .counter-heading-wrapper>h3 {
+            color: rgba(255, 255, 255, .8);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .counter-contents {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .counter {
+            font-size: 80px;
+        }
+
+        .counter-unit {
+            font-size: 15px;
+        }
+
+        #collaboration {
+            background-color: white;
+            padding: 100px 0;
+        }
+
+        .collabo-contents-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .collabo-contents-container>.temp-img {
+            width: 600px;
+            height: 500px;
+            background-color: gray;
+            border-radius: 24px;
+            flex-shrink: 0;
+        }
+
+        .collabo-list-container {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 24px;
+
+        }
+
+        .collabo-list-content {
+            width: calc((100% - 24px) / 2);
+        }
+
+        .collabo-content-link {
+            display: flex;
+            padding: 16px;
+            height: 100%;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        .collabo-content-link>h3 {
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .collabo-content-p {
+            color: #444;
+            height: 100%
+        }
+
+        .collabo-content-link>.category {
+            color: #333;
+        }
+
+        .choice {
+            background-color: #5dc591;
+            border-radius: 16px;
+        }
+
+        .choice .collabo-content-link>h3 {
+            color: white;
+        }
+
+        .choice .collabo-content-p {
+            color: white;
+        }
+
+        .choice .collabo-content-link>.category {
+            color: white;
+        }
+
+        @media screen and (max-width:1365px) {
+            header {
+                height: 80px;
+            }
+
+            .container {
+                height: 100%;
+            }
+
+            .header-list-container {
+                display: none;
+            }
+
+            header:hover {
+                height: 80px;
+            }
+
+            .hamberger-menu {
+                display: block;
+            }
+
+            #intro {
+                height: 400px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- https://www.kyobolifeinnostage.co.kr/ 헤더 만들기 연습 -->
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="#">INNOSTAGE</a></h1>
+            <nav>
+                <ul class="header-list-container">
+                    <li><a href="#">INNOSTAGE</a></li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                        <ul class="inner-list-container">
+                            <li><a href="#">이노스테이지 기업</a></li>
+                            <li><a href="#">기업 탐색하기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Apply</a>
+                        <ul class="inner-list-container">
+                            <li><a href="#">지원 프로그램</a></li>
+                            <li><a href="#">협업 제안</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Community</a></li>
+                </ul>
+            </nav>
+            <div class="icon-container">
+                <a href="#">아이콘</a>
+                <a href="#" class="hamberger-menu">햄</a>
+            </div>
+        </div>
+    </header>
+    <section id="intro">
+        <div class="intro-title-container">
+            <h2>The stage for your growth</h2>
+            <p>교보생명과 스타트업이 함께 미래를 만들어갑니다.</p>
+        </div>
+    </section>
+
+
+    <section id="innostage">
+        <div class="section-container">
+            <div class="section-header-wrapper">
+                <h2>INNOSTAGE</h2>
+                <p>육성과 투자로 빠른 성장을 지원합니다.</p>
+            </div>
+
+            <ul class="innostage-list">
+                <li class="innostage-list-contents">
+                    <h3>Acceleration</h3>
+                    <p>교보생명 액셀러레이션 프로그램</p>
+                    <a href="#"></a>
+                </li>
+                <li class="innostage-list-contents">
+                    <h3>Investment</h3>
+                    <p>전략적 목적에 따른 직·간접 투자</p>
+                    <a href="#"></a>
+                </li>
+                <li class="innostage-list-contents">
+                    <h3>Portfolio</h3>
+                    <p>육성 및 투자 기업 소개</p>
+                    <a href="#"></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="performance">
+        <div class="section-container">
+            <div class="section-header-wrapper">
+                <h2>Performance</h2>
+                <p>뛰어난 기술력과 설장 잠재력을
+                    <br>
+                    갖춘 스타트업과 함께합니다.
+                </p>
+            </div>
+            <ul class="counter-list-container">
+                <li class="counter-container">
+                    <div class="counter-heading-wrapper">
+                        <div class="temp-img"></div>
+                        <h3>발굴 기업 수</h3>
+                    </div>
+                    <div class="counter-contents">
+                        <p class="counter">1,307</p>
+                        <p class="counter-unit">개사</p>
+                    </div>
+                </li>
+                <li class="counter-container">
+                    <div class="counter-heading-wrapper">
+                        <div class="temp-img"></div>
+                        <h3>누적 육성 기업 수</h3>
+                    </div>
+                    <div class="counter-contents">
+                        <p class="counter">40</p>
+                        <p class="counter-unit">개 사</p>
+                    </div>
+                </li>
+                <li class="counter-container">
+                    <div class="counter-heading-wrapper">
+                        <div class="temp-img"></div>
+                        <h3>누적 협업 건 수</h3>
+                    </div>
+                    <div class="counter-contents">
+                        <p class="counter">120</p>
+                        <p class="counter-unit">건 수</p>
+                    </div>
+                </li>
+                <li class="counter-container">
+                    <div class="counter-heading-wrapper">
+                        <div class="temp-img"></div>
+                        <h3>누적 투자 금액</h3>
+                    </div>
+                    <div class="counter-contents">
+                        <p class="counter">719</p>
+                        <p class="counter-unit">억 원</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="collaboration">
+        <div class="section-container">
+            <div class="section-header-wrapper">
+                <h2>Collaboration</h2>
+                <p>교보생명과 스타트업 간의 우수 협업 사례를 소개합니다.</p>
+            </div>
+
+            <div class="collabo-contents-container">
+                <!-- <img src="" alt=""> -->
+                <div class="temp-img"></div>
+                <ul class="collabo-list-container">
+                    <li class="collabo-list-content choice">
+                        <a href="#" class="collabo-content-link">
+                            <h3>째깍악어</h3>
+                            <p class="collabo-content-p">아이 돌봄 및 선생님 매칭 플랫폼</p>
+                            <p class="category">육성 · 투자</p>
+                        </a>
+                    </li>
+                    <li class="collabo-list-content">
+                        <a href="#" class="collabo-content-link">
+                            <h3>째깍악어</h3>
+                            <p class="collabo-content-p">아이 돌봄 및 선생님 매칭 플랫폼</p>
+                            <p class="category">육성 · 투자</p>
+                        </a>
+                    </li>
+                    <li class="collabo-list-content">
+                        <a href="#" class="collabo-content-link">
+                            <h3>째깍악어</h3>
+                            <p class="collabo-content-p">아이 돌봄 및 선생님 매칭 플랫폼</p>
+                            <p class="category">육성 · 투자</p>
+                        </a>
+                    </li>
+                    <li class="collabo-list-content">
+                        <a href="#" class="collabo-content-link">
+                            <h3>째깍악어</h3>
+                            <p class="collabo-content-p">아이 돌봄 및 선생님 매칭 플랫폼</p>
+                            <p class="category">육성 · 투자</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

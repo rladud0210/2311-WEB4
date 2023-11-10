@@ -57,7 +57,12 @@
         
     <script>
         const test = document.getElementById('test');
+        
+        const select = document.getElementsByClassName('scroll-inter');
 
+        console.log(select);
+
+        
         // test의 위치를 파악할 수 있게 해주는 도구
         console.log(
             test.getBoundingClientRect() // = 다양한 좌표값들을 반환해준다.
@@ -68,11 +73,22 @@
         // 스크롤 할 때마다 test의 위치 정보를 콘솔에 출력하게
 
        
-        window.addEventListener('scroll',()=>{
-            if(test.getBoundingClientRect().top - window.innerHeight < 0){ 
-                test.classList.add('active');
-            }else{
-                test.classList.remove('active');
+        // window.addEventListener('scroll',()=>{
+        //     if(test.getBoundingClientRect().top - window.innerHeight < 0){ 
+        //         test.classList.add('active');
+        //     }else{
+        //         test.classList.remove('active');
+        //     }
+        // })
+
+
+        window.addEventListener('scroll',(e)=>{
+            for(let i = 0 ; i < select.length ; i++) {  
+                if(select[i].getBoundingClientRect().top - window.innerHeight < 0){ 
+                    select[i].classList.add('active');
+                }else{
+                    select[i].classList.remove('active');
+                }
             }
         })
     </script>
