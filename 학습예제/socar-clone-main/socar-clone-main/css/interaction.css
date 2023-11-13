@@ -23,6 +23,16 @@ header.scrolled .hamberger::before {
 
 /* 메인컨텐츠 숨겨놓기(오른쪽으로 이동) */
 
+.scroll-inter {
+    opacity: 0;
+    transition: 1s;
+    transform: translateX(-50px);
+}
+
+.scroll-inter.active {
+    opacity: 1;
+    transform: none;
+}
    
 
 
