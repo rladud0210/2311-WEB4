@@ -172,6 +172,7 @@ h1 > a {
     height: 100%;
     background-color: var(--main-color);
     transform: translateX(80%) skewX(-30deg);
+    /* skewX 안 없어지게 주의. 상단에서 transform이 작동하면 하단의 skewX는 사라짐 */
 }
 
 footer {
@@ -283,6 +284,7 @@ footer nav {
     
     .incline {
         transform: translateX(86%) skewX(-30deg);
+        
     }
     
     #app-download {

@@ -1,43 +1,46 @@
 /* 헤더가 숨었을 때 */
 
-header.hide {
+header.hide{
     transform: translateY(-100%);
     opacity: 0;
 }
 
 /* 스크롤 했을 때 헤더 */
 
-header.scrolled {
-    background-color: #ffffffdb;
-    border-bottom: 1px solid #aaaaaa80;
-}
+    /* 헤더에 scrolled */
+    header.scrolled {
+        background-color: #ffffffdb;
+        border-bottom: 1px solid #aaaaaa80;
+    }
 
-header.scrolled .st0 {
-    fill: var(--main-color);
-}
+    /* socar에 scrolled */
+    header.scrolled .st0{
+        fill: var(--main-color);
+    }
 
-header.scrolled .hamberger::after,
-header.scrolled .hamberger::before {
-    background-color: var(--main-color);
-}
+    /* 햄버거 메뉴에 scrolled */
+    header.scrolled .hamberger::before,
+    header.scrolled .hamberger::after {
+        background-color: var(--main-color);
+    }
+
 
 /* 메인컨텐츠 숨겨놓기(오른쪽으로 이동) */
 
-.scroll-inter {
-    opacity: 0;
-    transition: 1s;
-    transform: translateX(-50px);
-}
+    /* 숨어있을 때 */
+    .scroll-inter {
+        opacity: 0;
+        transition: 1s;
+        transform: translate(-50px);
+    }
 
-.scroll-inter.active {
-    opacity: 1;
-    transform: none;
-}
-   
-
+    /* 나타났을 때 */
+    .active {
+        opacity: 1;
+        transform: none;
+    }
 
 /* '함께하고 있습니다' 오른쪽에 파란 평행사변형 이동시켜놓기 */
-
 #start-together > .incline {
     transform: translateX(40%) skewX(-30deg);
     left: 80%;
@@ -48,9 +51,7 @@ header.scrolled .hamberger::before {
     transform: skewX(-30deg);
 }
 
-
 /* 앱 다운로드 버튼 */
-
 #app-download > .incline {
     transition: 1s;
     transform: skewX(-30deg) translateX(120%);
