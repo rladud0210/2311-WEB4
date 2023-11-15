@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="count">900</p>
+    <p class="counts">1525</p>
+    <p class="counts">565</p>
+    <p class="counts">25857524</p>
+    <p class="counts">10</p>
+    <script>
+        const count = document.getElementById('count');
+        
+        
+        
+        makeCount(count,2000,60);
+        
+        const counts = document.getElementsByClassName('counts');
+
+        for(let i = 0 ; i < counts.length; i++) {
+            makeCount(counts[i],2000,60);
+        }
+        
+    
+        // count.innerText = '1'
+
+        // setTimeout(() => {
+        //     count.innerText = '2'
+        // },1000)
+
+        // setTimeout(() => {
+        //     count.innerText = '3'
+        // },2000)
+
+        // _________________________________________________________
+        
+        // const goal = 9210000;
+        // let nowCount = 0;
+        // const 지속시간 = 2000;
+        // const fps = 60;
+        // const 재생횟수 = 지속시간/1000 *  fps; // 120
+
+        // const 한번에몇씩올라가야하는가 = goal / 재생횟수 //76750
+        
+        // for(let i = 0 ; i < 재생횟수 ; i++) {
+        //     const 진행도 = (i+1) / 재생횟수;
+            
+        //     setTimeout(() => {
+        //         // nowCount += 한번에몇씩올라가야하는가;
+        //         count.innerText = `${Math.floor(easeInOutQuart(진행도) *goal).toLocaleString()}`
+        //     }, 1000/fps*i);
+        // }
+
+
+        // function easeInOutQuart(x){
+        //     return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2;
+        // }
+
+
+        // _________________________________________________________
+
+        
+        function makeCount(대상,지속시간,fps){
+            const goal = Number(대상.innerText);
+
+            const 재생횟수 = 지속시간/1000 * fps;
+            
+            for(let i = 0 ; i < 재생횟수 ; i++) {
+                const 진행도 = (i+1) / 재생횟수;
+                
+                setTimeout(() => {
+                    대상.innerText = `${Math.floor(easeInOutQuart(진행도) * goal).toLocaleString()}`
+                }, 1000/fps*i);
+            }
+
+
+            function easeInOutQuart(x){
+                return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2;
+            }  
+
+        }
+
+
+
+
+
+
+    </script>
+</body>
+</html>
