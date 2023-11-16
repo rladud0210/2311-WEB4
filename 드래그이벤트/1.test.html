@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #drag-able {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+        cursor: pointer;
+        left: 0;
+        top: 0;
+    }
+
+    #drag-able.dragging {
+        cursor: move;
+    }
+</style>
+<body>
+    <div id="drag-able">
+
+    </div>
+
+    <script>
+        const dragAble = document.getElementById('drag-able');
+
+        // 재료
+        let isClicked = false; // 1. 클릭 되었는지 체크해줄 변수
+        
+        let posX, posY= 0; // 2. x 좌표와 y 좌표를 담을 변수
+        
+        
+
+        dragAble.addEventListener('mousedown',(e)=>{
+            isClicked = true;
+
+            
+            // client
+            // _________________________________________________________
+            // posX=e.clientX
+            // posY=e.clientY
+            // divX=dragAble.getBoundingClientRect().left;
+            // divY=dragAble.getBoundingClientRect().top;
+            // _________________________________________________________
+            
+            // 클릭하는 시점의 좌표를 기억
+            
+            posX = e.offsetX; 
+            posY = e.offsetY;
+            
+            dragAble.classList.add('dragging')
+           
+        }) 
+
+        dragAble.addEventListener('mousemove',(e)=>{
+            if(isClicked){
+                
+                // client
+                // _________________________________________________________
+                // dragAble.style.left = `${divX + (e.clientX - posX)}px`;
+                // dragAble.style.top = `${divY + (e.clientY - posY)}px`;
+                // _________________________________________________________
+                
+
+                // 기억한 좌표와 현재 마우스 위치를 비교하면 이동거리를 파악할 수 있다
+                // 파악한 이동거리만큼 div를 이동 시켜주면 됩니다.
+                
+                dragAble.style.left = `${e.clientX - posX}px`;
+                dragAble.style.top = `${e.clientY - posY}px`;
+            }
+        })
+
+        dragAble.addEventListener('mouseup',(e)=>{
+            
+            isClicked = false;
+            dragAble.classList.remove('dragging')
+
+        })
+    </script>
+</body>
+</html>

@@ -6,15 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <p id="count">0</p>
-    <!-- <p class="counts">123</p>
+    <p id="count">9210000</p>
+    <p class="counts">123</p>
     <p class="counts">444</p>
     <p class="counts">515135</p>
-    <p class="counts">12345245</p> -->
+    <p class="counts">12345245</p>
     <script>
         // goal, cowCount, 한번에 몇씩 올라가는지, 재생횟수, 지속시간
         const count = document.getElementById('count')
-        
+    
         const goal = 9210000;
         let nowCount = 0; 
         const 지속시간 = 2000;
@@ -27,10 +27,9 @@
         for(let i = 0 ; i < 재생횟수 ; i ++){
             setTimeout(()=>{
                 nowCount += 한번에몇씩올라가는지;
-                count.innerText =`${i+한번에몇씩올라가는지}`
+                count.innerText =`${nowCount}`
             }, 1000/fps*i)
         }
-
 
     </script>
 </body>
