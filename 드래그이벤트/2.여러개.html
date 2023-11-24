@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .canvas {
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            border: 1px solid #222;
+            background-color: #EEE;
+            position: relative;
+        }
+
+        .rect {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas">
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+    </div>
+
+    <script>
+
+
+    const rects = document.getElementsByClassName('rect')
+
+    for(let i = 0 ; i < rects.length ; i ++) {
+        makeDragAble(rects[i]);
+    }
+
+    function makeDragAble(대상) {
+        console.log('실행');
+        let isClicked = false;
+        let posX, posY = 0;
+
+        대상.addEventListener('mousedown',(e) => {
+            isClicked = true;
+            posX = e.offsetX;
+            posY = e.offsetY;
+        })
+        window.addEventListener('mousemove', (e) => {
+            if(isClicked){  
+                대상.style.left = `${e.clientX - posX}px`;
+                대상.style.top = `${e.clientY - posY}px`;
+            }
+        })
+        대상.addEventListener('mouseup', (e) => {
+            isClicked = false;
+        })
+    }
+
+    </script>
+</body>
+</html>

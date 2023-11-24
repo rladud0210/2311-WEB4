@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .gallery {
+            transform: translateY(150%);
+
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            margin: 32px auto;
+            position: relative;
+        }
+
+        .content {
+            width: 100px;
+            height: 200px;
+            background-color: pink;
+            border: 1px solid #444;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
+            transform: translate(-50%,calc(-50% - 200px)) rotate(0deg);
+            transform-origin: center calc(50% + 300px);
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <ul class="container">
+            <li class="content">1</li>
+            <li class="content">2</li>
+            <li class="content">3</li>
+            <li class="content">4</li>
+            <li class="content">5</li>
+            <li class="content">6</li>
+            <li class="content">7</li>
+            <li class="content">8</li>
+            <li class="content">9</li>
+            <li class="content">10</li>
+            <li class="content"></li>
+            <li class="content"></li>
+            <li class="content"></li>
+            <li class="content"></li>
+            <li class="content"></li>
+            <li class="content"></li>
+            <li class="content"></li>
+        </ul>
+    </div>
+    <script>
+        const content = document.getElementsByClassName('content')
+        
+        
+        for(let i = 0 ; i < content.length ; i ++) {
+            content[i].style.transform = `translate(-50%,calc(-50% - 300px)) rotate(${i*20}deg)`
+        }
+        
+        
+        const wrapper = document.querySelector('.container');
+
+        const wrapperCenter = {
+            x: wrapper.getBoundingClientRect().left + wrapper.getBoundingClientRect().width/2,
+            y: wrapper.getBoundingClientRect().top + wrapper.getBoundingClientRect().height/2
+        }
+
+        let index = 0;
+        let 이동각도 = 0;
+        let startDeg = 0;
+        let isClicked = false
+        wrapper.addEventListener('mousedown',(e)=>{
+            startDeg = getDegree(e);
+            isClicked = true;
+        })
+
+        wrapper.addEventListener('mousemove', (e)=>{
+            if(isClicked){
+                wrapper.style.transition = '0s';
+                이동각도 = getDegree(e) - startDeg
+                wrapper.style.transform = `rotate(${index * -20 + 이동각도}deg)`
+            }
+        })
+
+        wrapper.addEventListener('mouseup', (e)=>{
+            isClicked = false;
+            index = index + Math.round(-이동각도/20);
+            applyIndex();
+        })
+
+
+
+        function applyIndex(){
+            wrapper.style.transition = '0.2s';
+            wrapper.style.transform = `rotate(${index * -20}deg)`
+        }
+        
+
+
+        function getDegree(e) {
+            const x = wrapperCenter.x - e.clientX
+            const y = wrapperCenter.y - e.clientY
+
+            const radian = Math.atan2(y, x); // atan2함수
+            const degree = (radian * 180 / Math.PI).toFixed(0);  // radian -> 
+
+            return degree;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .obj {
+            position: absolute;
+            transform: translate(-50%,-50%);
+        }
+
+        .me {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            border-radius: 50%;
+
+            top: 50%;
+            left: 45%;
+        }
+
+        .enemy {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="me obj"></div>
+    <div class="enemy obj"></div>
+
+    <script>
+        const me = document.querySelector('.me');
+        const enemy = document.querySelector('.enemy');
+
+
+        
+        setInterval(() => {
+            
+            // 여러군데서 사용할 값이므로 상수에 저장해 가독성 높이기
+            const mePos = me.getBoundingClientRect();
+            const enemyPos = enemy.getBoundingClientRect();
+
+            // 두 원의 반지름을 더한 값. 중점을 기준으로 거리를 쟀을때 이 값보다 작아지면 충돌한것 
+            const 충돌거리 = enemyPos.width/2 + mePos.width/2
+
+            // 두 원의 중심좌표를 구하기
+            const myCenter = mePos.left + mePos.width/2
+            const enemyCenter = enemyPos.left + enemyPos.width/2
+
+            // -75~+75를 파악하는것보단 75이하를 파악하는것이 더 깔끔하다.
+            // abs(절댓값)를 이용해 양수로 만들어준다.
+            const 적과나의거리 = Math.abs(myCenter - enemyCenter);
+
+            // 충돌거리와 개체 사이의 거리를 비교해 충돌감지 시행
+            if(적과나의거리 <= 충돌거리){
+                console.log('충돌했어요')
+            }else {
+                console.log('고요합니다')
+            }
+        }, 1000/60);
+
+
+    </script>
+</body>
+</html>

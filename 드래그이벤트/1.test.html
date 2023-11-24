@@ -4,82 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<style>
-    #drag-able {
-        width: 200px;
-        height: 200px;
-        background-color: red;
-        position: absolute;
-        cursor: pointer;
-        left: 0;
-        top: 0;
-    }
+    <style>
+        #drag-able {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            cursor: pointer;
+            left: 100px;
+            top: 100px;
+        }
 
-    #drag-able.dragging {
-        cursor: move;
-    }
-</style>
+        #drag-able.dragging {
+            cursor: move;
+        }
+    </style>
+</head>
 <body>
     <div id="drag-able">
 
     </div>
 
     <script>
-        const dragAble = document.getElementById('drag-able');
-
+        const dargAble = document.getElementById('drag-able');
+        
         // 재료
-        let isClicked = false; // 1. 클릭 되었는지 체크해줄 변수
-        
-        let posX, posY= 0; // 2. x 좌표와 y 좌표를 담을 변수
-        
-        
+        let isClicked = false;
 
-        dragAble.addEventListener('mousedown',(e)=>{
+        let posX, posY = 0;
+        // 2. x좌표와 y좌표를 담을 변수
+
+       
+        dargAble.addEventListener('mousedown',(e) => {
             isClicked = true;
 
-            
-            // client
-            // _________________________________________________________
             // posX=e.clientX
             // posY=e.clientY
-            // divX=dragAble.getBoundingClientRect().left;
-            // divY=dragAble.getBoundingClientRect().top;
-            // _________________________________________________________
-            
+            // divX=dargAble.getBoundingClientRect().left;
+            // divY=dargAble.getBoundingClientRect().top;
+
+            console.log(posX, posY);
             // 클릭하는 시점의 좌표를 기억
-            
-            posX = e.offsetX; 
+
+            dargAble.classList.add('dragging')
+
+            // offset?
+
+            posX = e.offsetX;
             posY = e.offsetY;
-            
-            dragAble.classList.add('dragging')
-           
-        }) 
 
-        dragAble.addEventListener('mousemove',(e)=>{
+        })
+        
+        dargAble.addEventListener('mousemove', (e) => {
             if(isClicked){
-                
-                // client
-                // _________________________________________________________
-                // dragAble.style.left = `${divX + (e.clientX - posX)}px`;
-                // dragAble.style.top = `${divY + (e.clientY - posY)}px`;
-                // _________________________________________________________
-                
 
-                // 기억한 좌표와 현재 마우스 위치를 비교하면 이동거리를 파악할 수 있다
-                // 파악한 이동거리만큼 div를 이동 시켜주면 됩니다.
+               
+                // 기억한 좌표와 현재 마우스 위치를 비교하면 이동거리를 파악할수 있다.
+                // 파악한 이동거리만큼 div를 움직여주면 됩니다.
+
+                // dargAble.style.left = `${divX + (e.clientX - posX)}px`;
+                // dargAble.style.top = `${divY + (e.clientY - posY)}px`;
+                // dargAble.style.top = `${???}px`;
                 
-                dragAble.style.left = `${e.clientX - posX}px`;
-                dragAble.style.top = `${e.clientY - posY}px`;
+                dargAble.style.left = `${e.clientX - posX}px`;
+                dargAble.style.top = `${e.clientY - posY}px`;
             }
-        })
-
-        dragAble.addEventListener('mouseup',(e)=>{
             
+        })
+        
+        dargAble.addEventListener('mouseup', (e) => {
+
             isClicked = false;
-            dragAble.classList.remove('dragging')
+            dargAble.classList.remove('dragging')
+
 
         })
+    
+
+
+
+
     </script>
 </body>
 </html>
