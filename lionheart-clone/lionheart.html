@@ -1,0 +1,117 @@
+<!-- news container
+w 1200
+메인 슬라이더는 일단 section으로 공간만 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            color: #222;
+            text-decoration: none;   
+        }
+
+        body {
+            height: 10000px;
+            background-image: linear-gradient(#333, #AAA);
+        }
+        
+        header {
+            position: fixed;
+            width: 100%;
+            background-color: white;
+            padding: 0 32px;
+            box-sizing: border-box;
+            height: 64px;
+        }
+
+        header:hover {
+            height: 200px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            border-top: 3px solid #222;
+            border-bottom: 3px solid #222;
+        }
+
+        .header-list-container {
+            display: flex;
+        }
+
+        .header-list-container>li {
+            position: relative;
+        }
+
+        .header-list-container>li>a {
+            display: block;
+            padding: 24px 48px;
+            font-weight: bold;
+        }
+
+        .language-contaier{
+            display: flex;
+            gap: 16px;
+        }
+
+        #intro {
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .intro-title-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        #intro h2,h3 {
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="class"><a href="#">lionheart</a></h1>
+            <nav>
+                <ul class="header-list-container">
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">GAMES</a></li>
+                    <li><a href="#">CAREER</a></li>
+                    <li><a href="#">IR</a></li>
+                    <li><a href="#">NEWS</a></li>
+                </ul>
+                <div class="language-contaier">
+                    <a href="#">KR</a>
+                    <a href="#">EN</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="intro">
+        <div class="intro-title-container">
+            <h2>최고를 위해 최고들이 모인 곳</h2>
+            <br>
+            <h3>라이온하트 스튜디오</h3>
+        </div>
+    </section>
+</body>
+</html>
