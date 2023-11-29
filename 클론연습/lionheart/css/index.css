@@ -1,0 +1,55 @@
+img {
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 100; /* Z축 순서를 지정*/
+    background-color: gray;
+}
+
+.header-inner{
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box; /*padding 안에 들어가는 요소를 줄여서 크기는 그대로*/
+    gap: 120px;
+}
+
+h1 {
+    width: 240px;
+}
+
+header nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /*가로*/
+}
+
+header ul {
+    display: flex;
+    gap: 24px;
+    align-items: center; /*세로*/
+}
+
+.header-menus > a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.header-lang-container {
+    display: flex;
+    gap: 12px;
+    align-self: center; /*align-items 속성과 유사하지만, align-self 속성은 특정 요소에만 적용*/
+}
+
+.header-lang-container > a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}

@@ -4,18 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <!-- https://storytaco.com/ -->
     <header>
         <div class="container">
-            <h1 class="logo"><a href="#">STORYTACO</a></h1>
+                <a href="#" class="storytaco-logo">
+                    <img src="img/logo.png" alt="storytaco-logo">
+                </a>
             <nav>
                 <ul class="header-list-container">
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">GAMES</a></li>
-                    <li><a href="#">CULTURE</a></li>
-                    <li><a href="#">CAREERS</a></li>
+                    <li class="header-list">
+                        <a href="#">ABOUT</a>
+                    </li>
+                    <li class="header-list">
+                        <a href="#">GAMES</a>
+                    </li>
+                    <li class="header-list">
+                        <a href="#">CULTURE</a>
+                    </li>
+                    <li class="header-list">
+                        <a href="#">CAREERS</a>
+                    </li>
                 </ul>
             </nav>
             <div class="icon-container">
@@ -33,12 +44,16 @@
                 만나는 곳.
             </h2>
             <p>일상을 떠나 새로운 세계에서 당신의 스토리가 펼쳐집니다.</p>
-            <a href="#">MORE VIEW</a> 
+            <a href="#" class="more view">MORE VIEW</a> 
         </div>
-        <p>SCROLL</p>
+        <div class="scroll-container">
+            <p>SCROLL</p>
+            <img src="img/Scroll.png" alt="under-arrow">
+        </div>
     </section>
 
     <section id="goals">
+        <img src="img/sec05_bg.jpg" alt="goals-background-img">
         <div class="section-container">
             <div class="section-header-wrapper">
                 <p>STORYTACO GOALS</p>
@@ -83,35 +98,35 @@
             </div>
         </div>
         <ul class="counter-list-container">
-            <li class="counter-container">
+            <li class="performance-contents-container">
                 <div class="counter-heading-wrapper">
-                    <div class="temp-img"></div>
+                    <img src="" alt="download">
                     <p>누적다운로드 수</p>
                 </div>
-                <div class="count">
-                    <h3 class="count-1">2000</h3>
+                <div class="count-container">
+                    <h3 class="count">2000</h3>
                     <h4>만+</h4>
                 </div>
             
             </li>
-            <li class="counter-container">
-                <div class="counter-heading-wrapper">
-                    <div class="temp-img"></div>
+            <li class="performance-contents-container">
+                <div class="count-container">
+                    <img src="" alt="user">
                     <p>월 평균 유저 수</p>
                 </div>
-                <div class="count">
-                    <h3 class="count-1">100</h3>
+                <div class="count-container">
+                    <h3 class="count">100</h3>
                     <h4>만+</h4>
                 </div>
             
             </li>
-            <li class="counter-container">
+            <li class="performance-contents-container">
                 <div class="counter-heading-wrapper">
-                    <div class="temp-img"></div>
+                    <img src="" alt="country">
                     <p>총 출시 국가</p>
                 </div>
-                <div class="count">
-                    <h3 class="count-1">176</h3>
+                <div class="count-container">
+                    <h3 class="count">176</h3>
                     <h4>개</h4>
                 </div>
             </li>
@@ -126,23 +141,72 @@
                     <br>
                     스토리타코는 글로벌 유저들과 즐거움을 나눕니다.
                 </p>
-                <a href="#">MORE VIEW</a>
+                <a href="#" class="moreview">MORE VIEW</a>
             </div>
             <div class="about-imoji">
-                <div class="about-image-wrapper">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                </div>
+                <ul class="about-image-wrapper">
+                    <li class="emogi">
+                        <img src="" alt="">
+                        <p class="name">김제일</p>
+                        <p class="position">CEO</p>
+                    </li>
+                    <li class="emogi">
+                        <img src="" alt="">
+                        <p class="name">문슬함</p>
+                        <p class="position">CEO</p>
+                    </li>
+                    <li class="emogi">
+                        <img src="" alt="">
+                        <p class="name">김대천</p>
+                        <p class="position">CPO</p>
+                    </li>
+                    <li class="emogi">
+                        <img src="" alt="">
+                        <p class="name">강예인</p>
+                        <p class="position">바닐라</p>
+                    </li>
+                    <li class="emogi">
+                        <img src="" alt="">
+                        <p class="name">권순아</p>
+                        <p class="position">UI/UX</p>
+                    </li>
+                    <li class="emogi">
+                        <img src="" alt="">
+                        <p class="name">김현지</p>
+                        <p class="position">무.사</p>
+                    </li>
+                    <li class="emogi">
+                        <img src="" alt="">
+                        <p class="name">신솔잎</p>
+                        <p class="position">경영 지원</p>
+                    </li>
+                    <li class="emogi">
+                        <img src="" alt="">
+                        <p class="name">정예림</p>
+                        <p class="position">특공대</p>
+                    </li>
+                    <li class="emogi">
+                        <img src="" alt="">
+                        <p class="name">김보연</p>
+                        <p class="position">마케팅</p>
+                    </li>
+                    <li class="emogi">
+                        <img src="" alt="">
+                        <p class="name">정경태</p>
+                        <p class="position">개발</p>
+                    </li>
+                </ul>
+                
             </div>
         </div>
     </section>
     <section id="복리후생">
         <div class="section-container">
             <div class="section-header-wrapper">
-                <h2></h2>
+                <h2>
+                    <span class="storytaco">스토리타코의</span>
+                    <span class="special-welfare">특별한 복리후생</span>
+                </h2>
                 <p></p>
             </div>
             <ul class="welfare-list-container">
@@ -151,7 +215,7 @@
                         <img src="" alt="">
                     </div>
                     <p class="welfare-text">
-                        <br>
+                        1시간 30분의 <br> 여유로운 점심시간
                     </p>
                 </li>
                 <li class="welfare-contents">
@@ -159,7 +223,7 @@
                         <img src="" alt="">
                     </div>
                     <p class="welfare-text">
-                        <br>
+                        유연근무제 <br> (출근 8시~10시)
                     </p>
                 </li>
                 <li class="welfare-contents">
@@ -167,7 +231,7 @@
                         <img src="" alt="">
                     </div>
                     <p class="welfare-text">
-                        <br>
+                        자유로운 연차 사용, <br> 야근없는 회사
                     </p>
                 </li>
                 <li class="welfare-contents">
@@ -175,7 +239,7 @@
                         <img src="" alt="">
                     </div>
                     <p class="welfare-text">
-                        <br>
+                        경영 실적에 따른 <br> 인센티브지급
                     </p>
                 </li>
                 <li class="welfare-contents">
@@ -183,7 +247,7 @@
                         <img src="" alt="">
                     </div>
                     <p class="welfare-text">
-                        <br>
+                        장기근속자 <br> 유급휴가
                     </p>
                 </li>
                 <li class="welfare-contents">
@@ -191,7 +255,7 @@
                         <img src="" alt="">
                     </div>
                     <p class="welfare-text">
-                        <br>
+                        게임 컨퍼런스 <br> 출장 지원
                     </p>
                 </li>
                 <li class="welfare-contents">
@@ -199,7 +263,7 @@
                         <img src="" alt="">
                     </div>
                     <p class="welfare-text">
-                        <br>
+                        장비 지원 <br> (노트북,120도 책상 지원)
                     </p>
                 </li>
                 <li class="welfare-contents">
@@ -207,14 +271,14 @@
                         <img src="" alt="">
                     </div>
                     <p class="welfare-text">
-                        <br>
+                        젊은 구성원으로 <br> 수평적인 기업문화
                     </p>
                 </li>
             </ul>
-            <a href="" class="more-view"></a>
+            <a href="" class="more-view"> MORE VIEW </a>
         </div>
     </section>
-    <section class="games">
+    <section id="games">
         <div class="section-container">
             <div class="section-header-wrapper">
                 <h2></h2>
@@ -223,49 +287,120 @@
                 <div class="slider">
                     <ul class="slide-wrapper">
                         <li class="slide-contents">
-                        
-                                <div class="slide-image-wrapper">
-                                    <img src="" alt="">
+                            <div class="slide-image-wrapper">
+                                <img src="" alt="">
+                            </div>
+                            <div class="slider-text-container">
+                                <div class="slider-text">
+                                    <h4 class="slide-heading"></h4>
+                                    <h5></h5>
                                 </div>
-                                <h4 class="slide-heading"></h4>
-                                <p class="slide-text"> </p>
+                                <div class="slider-download">
+                                    <a href="">
+                                        <img src="" alt="playstore">
+                                    </a>
+                                    <a href="">
+                                        <img src="" alt="appstore">
+                                    </a>
+                                </div>
+                                <div>
+                                    <p class="slide-text"> </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="slide-contents">
+                            <div class="slide-image-wrapper">    
+                                <img src="" alt="">
+                            </div>
+                            <div class="slider-text-container">
+                                <div class="slider-text">
+                                    <h4 class="slide-heading"></h4>
+                                    <h5></h5>
+                                </div>
+                                <div class="slider-download">
+                                    <a href="">
+                                        <img src="" alt="playstore">
+                                    </a>
+                                    <a href="">
+                                        <img src="" alt="appstore">
+                                    </a>
+                                </div>
+                                <div>
+                                    <p class="slide-text"> </p>
+                                </div>
+                            </div>
                             
                         </li>
                         <li class="slide-contents">
                             
-                                <div class="slide-image-wrapper">    
-                                    <img src="" alt="">
+                            <div class="slide-image-wrapper">
+                                <img src="" alt="">
+                            </div>
+                            <div class="slider-text-container">
+                                <div class="slider-text">
+                                    <h4 class="slide-heading"></h4>
+                                    <h5></h5>
                                 </div>
-                                <h4 class="slide-heading"></h4>
-                                <p class="slide-text"></p>
+                                <div class="slider-download">
+                                    <a href="">
+                                        <img src="" alt="playstore">
+                                    </a>
+                                    <a href="">
+                                        <img src="" alt="appstore">
+                                    </a>
+                                </div>
+                                <div>
+                                    <p class="slide-text"> </p>
+                                </div>
+                            </div>
                             
                         </li>
                         <li class="slide-contents">
                             
-                                <div class="slide-image-wrapper">
-                                    <img src="" alt="">
+                            <div class="slide-image-wrapper">
+                               <img src="" alt="">
+                            </div>
+                            <div class="slider-text-container">
+                                <div class="slider-text">
+                                    <h4 class="slide-heading"></h4>
+                                    <h5></h5>
                                 </div>
-                                <h4 class="slide-heading"></h4>
-                                <p class="slide-text"></p>
+                                <div class="slider-download">
+                                    <a href="">
+                                        <img src="" alt="playstore">
+                                    </a>
+                                    <a href="">
+                                        <img src="" alt="appstore">
+                                    </a>
+                                </div>
+                                <div>
+                                    <p class="slide-text"></p>
+                                </div>
+                            </div>
                             
                         </li>
                         <li class="slide-contents">
                             
-                                <div class="slide-image-wrapper">
-                                    <img src="" alt="">
+                            <div class="slide-image-wrapper">    
+                                <img src="" alt="">
+                            </div>
+                            <div class="slider-text-container">
+                                <div class="slider-text">
+                                    <h4 class="slide-heading"></h4>
+                                    <h5></h5>
                                 </div>
-                                <h4 class="slide-heading"></h4>
-                                <p class="slide-text"></p>
-                            
-                        </li>
-                        <li class="slide-contents">
-                            
-                                <div class="slide-image-wrapper">    
-                                    <img src="" alt="">
+                                <div class="slider-download">
+                                    <a href="">
+                                        <img src="" alt="playstore">
+                                    </a>
+                                    <a href="">
+                                        <img src="" alt="appstore">
+                                    </a>
                                 </div>
-                                <h4 class="slide-heading"></h4>
-                                <p class="slide-text"></p>
-                            
+                                <div>
+                                    <p class="slide-text"> </p>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -275,7 +410,11 @@
                 </div>
             </div>
         </div>
-    </section>  
-        
+    </section>
+    <section id="채용안내">
+        <div class="section-container">
+
+        </div>
+    </section>
 </body>
 </html>
