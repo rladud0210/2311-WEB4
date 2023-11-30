@@ -6,7 +6,6 @@ header {
     position: fixed;
     width: 100%;
     z-index: 100; /* Z축 순서를 지정*/
-    background-color: gray;
 }
 
 .header-inner{
@@ -44,7 +43,7 @@ header ul {
 .header-lang-container {
     display: flex;
     gap: 12px;
-    align-self: center; /*align-items 속성과 유사하지만, align-self 속성은 특정 요소에만 적용*/
+    align-items: center; 
 }
 
 .header-lang-container > a {
@@ -52,4 +51,79 @@ header ul {
     text-decoration: none;
     font-weight: bold;
     font-size: 13px;
+}
+
+#intro-video {
+    height: 80vh;
+    background-color: black;
+    position: relative;
+}
+
+#intro-video > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro-video-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+    line-height: 140%;
+}
+
+.section-container {
+    max-width: 1200px;; /*컨테이너의 크기를 제한*/
+    margin: 0 auto; /*여기선 가운데 정렬을 위해 사용*/
+    padding: 0 32px; /*태블릿 32 모바일 16*/
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-title > h3 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.section-title > a {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.news-container {
+    display: flex;
+}
+
+.slider {
+    max-width: 1200px;
+    height: ;
+    overflow: hidden;
+}
+.slide-wrapper {
+    display: flex;
+}
+
+.slide-contents {
+    position: relative; 
+}
+
+.slide-image-wrapper  {
+     
+}
+
+.slide-image-wrapper > img.slide-logo {
+    position: absolute;
+    right: 0%;
+    bottom: ;
+    object-fit: scale-down;
+    width: 40%;
+    z-index: 1;
 }
